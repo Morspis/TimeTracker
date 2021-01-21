@@ -1,2 +1,2 @@
 # TimeTracker
-Repo for CIS 467 - 20 Capstone Project: Time Tracker
+Repo for CIS 467 Capstone Project: Time Tracker
