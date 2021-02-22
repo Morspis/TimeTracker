@@ -20,14 +20,11 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     LoginComponent,
-<<<<<<< HEAD
     HeaderComponent,
     DisplayBoardComponent,
-    UsersComponent
-=======
+    UsersComponent,
     ProjectsComponent,
     HomeComponent
->>>>>>> b30b72bd4bc0213a0182ef9d8d5df5ae8e3a997e
   ],
   imports: [
     BrowserModule,
