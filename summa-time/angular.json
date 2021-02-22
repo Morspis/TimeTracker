@@ -66,7 +66,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "summa-time:build"
+            "browserTarget": "summa-time:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
