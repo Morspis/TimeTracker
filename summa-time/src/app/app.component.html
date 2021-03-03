@@ -1,3 +1,4 @@
+
 <div class="container">
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -15,7 +16,7 @@
             <a routerLink="/projects" class="nav-link"> Projects </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Reports</a>
+            <a routerLink="/login" class="nav-link"> Login </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Help</a>
@@ -31,51 +32,15 @@
   </nav>
   <br><br>
 
-  <div class="jumbotron">
-    <h1 class="display-4"> Summa Time Time Tracker</h1>
-    <p class="lead">Keep track of your daily tasks!</p>
-    
-  </div>
-  <br>
-  <router-outlet></router-outlet>
+ 
 
 
-</div> <!-- container ends-->
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-7 mrgnbtm">
-      <h2>Create User</h2>
-      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
-        <div class="row">
-          <div class="form-group col-md-6">
-            <label for="exampleInputEmail1">First Name</label>
-            <input type="text" class="form-control" formControlName="firstName" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Name">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="exampleInputPassword1">Last Name</label>
-            <input type="text" class="form-control" formControlName="lastName" id="exampleInputPassword1" placeholder="Last Name">
-          </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-12">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="text" class="form-control" formControlName="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
-          </div>
-        </div>
-        <button type="submit" [disabled]="!userForm.valid" class="btn btn-danger">Create</button>
-      </form>
-    </div>
-    <div class="col-md-4 mrgnbtm">
-      <app-display-board
-       [userCount]="userCount"
-       (getUsersEvent)="getAllUsers()"
-      >
-      </app-display-board>
-    </div>
-  </div>
+
 </div>
-<div class="mrgnbtm">
-  <app-users *ngIf="users.length !== 0" [users]="users"></app-users>
-</div>
+
+
+
+<button><a class="nav-link" routerLink="/home">push me to get to home</a></button>
+ <router-outlet></router-outlet>
