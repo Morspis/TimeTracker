@@ -1,0 +1,35 @@
+{
+  "name": "timetracker",
+  "version": "1.0.0",
+  "description": "time tracker backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon ./server.js localhost 3080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+<<<<<<< Updated upstream
+    "express": "^4.17.1"
+=======
+    "@angular/animations": "~11.1.2",
+    "@angular/common": "~11.1.2",
+    "@angular/compiler": "~11.1.2",
+    "@angular/core": "~11.1.2",
+    "@angular/forms": "~11.1.2",
+    "@angular/platform-browser": "~11.1.2",
+    "@angular/platform-browser-dynamic": "~11.1.2",
+    "@angular/router": "~11.1.2",
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.11.3"
+>>>>>>> Stashed changes
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

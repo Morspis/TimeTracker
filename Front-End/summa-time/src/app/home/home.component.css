@@ -1,0 +1,65 @@
+.pds-button-toggle>.pds-button:first-child{
+    border-bottom-left-radius:3px;
+    border-top-left-radius:3px;
+    margin-left:0
+}
+
+.pds-button-icon-only.pds-button{
+    width:34px;
+}
+
+.pds-button-toggle>.pds-button{
+    border-radius:0;
+    float: left;
+}
+
+.pds-button-icon-only{
+    padding:0;
+}
+
+.pds-button{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(#fff,#eee);
+    border: 0;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 20%);
+    color: #555;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Fakt,Helvetica Neue,arial,verdana,Nimbus Sans L,sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    height: auto;
+    line-height: 34px;
+    outline-offset: -2px;
+    padding: 0 14px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: auto;
+}
+
+
+.pds-button-primary{
+    background: linear-gradient(#4fb840,#14a000);
+    color: #fff;
+    width:50px;
+    height:50px;
+
+}
+
+.w-100{
+    width: 100%!important;
+}
+
+.p-0{
+    padding: 0!important;
+}
+
+.new-entry-icon{
+ margin: 12px 0;
+ vertical-align: middle;   
+}
