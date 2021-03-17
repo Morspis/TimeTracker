@@ -32,11 +32,7 @@
             ],
             "styles": [
               "src/styles.css",
-<<<<<<< Updated upstream:summa-time/angular.json
               "./node_modules/bootstrap/dist/css/bootstrap.min.css"
-=======
-              "node_modules/bootstrap/dist/css/bootstrap.css"
->>>>>>> Stashed changes:angular.json
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
