@@ -132,8 +132,5 @@
       }
     }
   },
-  "defaultProject": "summa-time",
-  "cli": {
-    "analytics": "90187636-393b-49f9-b46a-a7af726bc56d"
-  }
+  "defaultProject": "summa-time"
 }
