@@ -63,3 +63,26 @@
  margin: 12px 0;
  vertical-align: middle;   
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+  }
+
+.fullscreen{
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+
+.flex{
+  justify-content: center;
+  display:flex;
+  align-items:center;
+  height:100%;
+  width:100%;
+}
+
+  .hidden{
+    display:none;
+  }

@@ -6,8 +6,7 @@ import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { RouterModule, Router, NavigationEnd } from '@angular/router';
 
- 
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -16,7 +15,6 @@ import { RouterModule, Router, NavigationEnd } from '@angular/router';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
-  
 })
 export class AppComponent implements OnDestroy {
 
@@ -27,9 +25,9 @@ constructor(private appService: AppService) {}
   title = 'Summa Time';
 
   userForm = new FormGroup({
-    firstName: new FormControl('', Validators.nullValidator && Validators.required),
-    lastName: new FormControl('', Validators.nullValidator && Validators.required),
-    email: new FormControl('', Validators.nullValidator && Validators.required)
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required)
   });
 
   users: any[] = [];
