@@ -14,7 +14,8 @@ import { LoginComponent } from './components/login/login.component';
 
 import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.component'
 import { TutorialsListComponent } from './components/tutorials-list/tutorials-list.component'
-import { TutorialDetailsComponent } from './components/tutorial-details/tutorial-details.component'
+import { TutorialDetailsComponent } from './components/tutorial-details/tutorial-details.component';
+import { ProfileComponent } from './components/profile/profile.component'
 
 @NgModule({
   declarations: [
@@ -23,9 +24,11 @@ import { TutorialDetailsComponent } from './components/tutorial-details/tutorial
     ProjectsComponent,
     HomeComponent,
     LoginComponent,
+    ProfileComponent,
     AddTutorialComponent,
     TutorialsListComponent,
     TutorialDetailsComponent,
+    
   ],
   imports: [
     BrowserModule,
