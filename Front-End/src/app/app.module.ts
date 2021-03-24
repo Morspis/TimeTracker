@@ -15,7 +15,14 @@ import { LoginComponent } from './components/login/login.component';
 import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.component'
 import { TutorialsListComponent } from './components/tutorials-list/tutorials-list.component'
 import { TutorialDetailsComponent } from './components/tutorial-details/tutorial-details.component';
-import { ProfileComponent } from './components/profile/profile.component'
+import { ProfileComponent } from './components/profile/profile.component';
+import { RegisterComponent } from './components/register/register.component';
+import { BoardAdminComponent } from './components/board-admin/board-admin.component';
+import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
+import { BoardUserComponent } from './components/board-user/board-user.component'
+
+import { authInterceptorProviders } from './helpers/auth.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +35,10 @@ import { ProfileComponent } from './components/profile/profile.component'
     AddTutorialComponent,
     TutorialsListComponent,
     TutorialDetailsComponent,
+    RegisterComponent,
+    BoardAdminComponent,
+    BoardModeratorComponent,
+    BoardUserComponent,
     
   ],
   imports: [
@@ -38,7 +49,7 @@ import { ProfileComponent } from './components/profile/profile.component'
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
