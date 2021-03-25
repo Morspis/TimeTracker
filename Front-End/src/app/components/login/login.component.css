@@ -265,3 +265,19 @@ input[type=text]:placeholder {
 * {
   box-sizing: border-box;
 }
+
+.profile-img-card{
+  height:20%;
+  width:20%;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+
+}
+
+.center{
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
