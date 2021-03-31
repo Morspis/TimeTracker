@@ -1,34 +1,48 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-<div class="container">
-  <div class="flex">
-    <div>
+<body>
+  <div class="main"> 
+    <div class="entry">
+      
       <button class="w3-button w3-xlarge w3-teal">+</button>
       <p class="smalltxt">New Entry</p>
-    </div>
     
-    <div class="jumbotron">
-  
-      <div class="twenty">haha</div>
-      <button class="arrowsl"><div class="flex"><span>&#8249;</span></div></button>
-      <button class="arrowsr"><div class="flex"><span>&#8250;</span></div></button>
-      <h1>
-  
-        Today:
-  
-          <span class="text-400">
-            Monday
-  
-          </span>
-      </h1>
-      
-      <div class="space"></div>
+    </div>
+
+    <div class="calendar">
+      <div class="top">
+        <button><div><span>&#8249;</span></div></button>
+        <button><div><span>&#8250;</span></div></button>
+        <p class="date"><strong>Today:</strong>insert date here</p>
       </div>
-  
+      <div class="time-content">
+        <div class="container space-around">
+        <div class="outline l">M 0:00</div>
+        <div class="outline"><button>T 0:00</button></div>
+        <div class="outline"><button>W</button></div>
+        <div class="outline"><button>Th</button></div>
+        <div class="outline"><button>F</button></div>
+        <div class="outline"><button>S</button></div>
+        <div class="outline r"><button>Su</button></div>
+        </div>
+      </div>
     </div>
-      <router-outlet></router-outlet>
     
-  </div> <!-- container ends-->
+  </div>
+</body>
+
+
+  
+
+      
+    
+    
+   
+
+
+  
+    <router-outlet></router-outlet>
+   
 
 
 
