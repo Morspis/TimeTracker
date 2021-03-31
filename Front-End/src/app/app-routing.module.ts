@@ -4,9 +4,9 @@ import { HomeComponent } from './components/home/home.component';
 import { AppComponent } from './app.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { LoginComponent } from './components/login/login.component';
-import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.component'
-import { TutorialsListComponent } from './components/tutorials-list/tutorials-list.component'
-import { TutorialDetailsComponent } from './components/tutorial-details/tutorial-details.component'
+import { AddTimeComponent } from './components/add-time/add-time.component'
+import { TimesListComponent } from './components/times-list/times-list.component'
+import { TimeDetailsComponent } from './components/time-details/time-details.component'
 import { ProfileComponent } from './components/profile/profile.component';
 import { BoardUserComponent } from './components/board-user/board-user.component';
 import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
@@ -18,11 +18,11 @@ const routes: Routes = [
   {path: 'homefd', component: AppComponent},
   {path: 'projects', component: ProjectsComponent},
   {path: 'login', component: LoginComponent},
-  { path: 'test', redirectTo: 'tutorials', pathMatch: 'full' },
-  { path: 'tutorials', component: TutorialsListComponent },
-  { path: 'tutorials/:id', component: TutorialDetailsComponent },
+  { path: 'test', redirectTo: 'times', pathMatch: 'full' },
+  { path: 'times', component: TimesListComponent },
+  { path: 'times/:id', component: TimeDetailsComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'add', component: AddTutorialComponent },
+  { path: 'add', component: AddTimeComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },

@@ -12,9 +12,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 
-import { AddTutorialComponent } from './components/add-tutorial/add-tutorial.component'
-import { TutorialsListComponent } from './components/tutorials-list/tutorials-list.component'
-import { TutorialDetailsComponent } from './components/tutorial-details/tutorial-details.component';
+import { AddTimeComponent } from './components/add-time/add-time.component'
+import { TimesListComponent } from './components/times-list/times-list.component'
+import { TimeDetailsComponent } from './components/time-details/time-details.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BoardAdminComponent } from './components/board-admin/board-admin.component';
@@ -32,9 +32,9 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
     HomeComponent,
     LoginComponent,
     ProfileComponent,
-    AddTutorialComponent,
-    TutorialsListComponent,
-    TutorialDetailsComponent,
+    AddTimeComponent,
+    TimesListComponent,
+    TimeDetailsComponent,
     RegisterComponent,
     BoardAdminComponent,
     BoardModeratorComponent,
