@@ -1,10 +1,12 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+<app-add-time #myModal></app-add-time>
+
 <body>
   <div class="main"> 
     <div class="entry">
       
-      <button class="w3-button w3-xlarge w3-teal">+</button>
+      <button (click)="addTime()" class="w3-button w3-xlarge w3-teal">+</button>
       <p class="smalltxt">New Entry</p>
     
     </div>

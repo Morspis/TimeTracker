@@ -22,6 +22,7 @@ import { BoardModeratorComponent } from './components/board-moderator/board-mode
 import { BoardUserComponent } from './components/board-user/board-user.component'
 
 import { authInterceptorProviders } from './helpers/auth.interceptor';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { authInterceptorProviders } from './helpers/auth.interceptor';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

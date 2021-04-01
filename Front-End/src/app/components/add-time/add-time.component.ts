@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Time } from 'src/app/models/time.model';
 import { TimeService } from 'src/app/services/time.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-add-time',
@@ -15,9 +16,11 @@ export class AddTimeComponent implements OnInit {
     date: '',
     teamName: ''
   };
+  @ViewChild('content') content: any;
   submitted = false;
+  closeResult: string | undefined;
 
-  constructor(private timeService: TimeService) { }
+  constructor(private timeService: TimeService, private modal: NgbModal) { }
 
   ngOnInit(): void {
   }
@@ -49,5 +52,14 @@ export class AddTimeComponent implements OnInit {
       teamName: '',
     };
   }
+  
+  open() {
+    // and use the reference from the component itself
+    this.modal.open(this.content).result.then((result) => {
+        this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+        console.log(reason);
+    });
+}
 
 }

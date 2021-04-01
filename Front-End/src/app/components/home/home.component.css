@@ -74,3 +74,11 @@ width:20%;
   border-bottom-right-radius:5px;
   border: solid black 1px;
 }
+
+.modal-open .modal {
+  display: flex !important;
+  align-items: center !important;
+}
+.modal-dialog {
+  flex-grow: 1;
+}
