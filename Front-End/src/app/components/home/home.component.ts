@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from '../../services/user.service';
+import { AddTimeComponent } from '../add-time/add-time.component';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,7 @@ import { UserService } from '../../services/user.service';
 export class HomeComponent implements OnInit {
   content?: string;
 
+  @ViewChild('myModal') modal!: AddTimeComponent;
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
@@ -20,5 +22,8 @@ export class HomeComponent implements OnInit {
         this.content = JSON.parse(err.error).message;
       }
     );
+  }
+  addTime(){
+    this.modal.open();
   }
 }
