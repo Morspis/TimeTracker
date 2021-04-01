@@ -1,0 +1,28 @@
+.profile-img-card{
+width:100px;
+height:100px;
+margin-bottom: 1rem;
+
+}
+
+.col-md-12{
+    display:flex;
+    justify-content: center;
+align-items: center;
+}
+
+.card-container{
+justify-content: center;
+align-items: center;
+width:400px;
+}
+
+
+.container{
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    margin-bottom: 0;
+}
