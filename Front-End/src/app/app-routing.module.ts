@@ -8,6 +8,7 @@ import { AddTimeComponent } from './components/add-time/add-time.component'
 import { TimesListComponent } from './components/times-list/times-list.component'
 import { TimeDetailsComponent } from './components/time-details/time-details.component'
 import { ProfileComponent } from './components/profile/profile.component';
+import { MenuComponent } from './menu/menu.component';
 import { BoardUserComponent } from './components/board-user/board-user.component';
 import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './components/board-admin/board-admin.component';
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'add', component: AddTimeComponent },
   { path: 'profile', component: ProfileComponent },
+   { path: 'menu', component: MenuComponent },
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },

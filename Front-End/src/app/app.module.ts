@@ -16,6 +16,7 @@ import { AddTimeComponent } from './components/add-time/add-time.component'
 import { TimesListComponent } from './components/times-list/times-list.component'
 import { TimeDetailsComponent } from './components/time-details/time-details.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { MenuComponent } from './menu/menu.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BoardAdminComponent } from './components/board-admin/board-admin.component';
 import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
@@ -33,6 +34,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   //interactionPlugin
 ]);
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +50,7 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
+    MenuComponent,
     
   ],
   imports: [

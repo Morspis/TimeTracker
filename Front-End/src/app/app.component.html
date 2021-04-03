@@ -42,7 +42,19 @@
 
       <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
         <li class="nav-item">
-          <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+
+          <a href="/profile" class="nav-link" routerLink="profile"><div class="dropdown">
+            
+            <a class="navbar-brand" href="#"><img class="img-responsive" height="50px" width="50px" src="assets/images/usr.png"
+                alt="SummaTime Logo">{{ username }}</a>
+            <div class="dropdown-content">
+            <a href="/profile" class="nav-link" routerLink="profile"> My Profile</a>
+              <a href="#">My Time Report</a>
+              <a href="#">Notification</a>
+              <a href="#">Sign Out</a>
+            </div>
+          </div></a>
+         
         </li>
         <li class="nav-item">
           <a href class="nav-link" (click)="logout()">LogOut</a>
