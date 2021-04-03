@@ -1,3 +1,5 @@
+
+<!---
 <div class="container" *ngIf="currentUser; else loggedOut">
     <header class="jumbotron">
       <h3>
@@ -24,3 +26,77 @@
   <ng-template #loggedOut>
     Please login.
   </ng-template>
+-->
+<div class="container rounded bg-white mt-5 mb-5">
+  <div class="row">
+    <div class="col-md-3 border-right">
+      <div class="d-flex flex-column align-items-center text-center p-3 py-2"><img class="rounded-circle mt-2"
+          src="assets/images/usr2.png"><span
+          class="font-weight-bold"><strong>{{ currentUser.username }}'s</strong> Profile</span><span class="text-black-70"><strong></strong>
+          {{ currentUser.email }}</span><span> </span></div>
+    </div>
+    <div class="col-md-5 border-right">
+      <div class="p-3 py-5">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h4 class="text-right">Your Basic Info</h4>
+        </div>
+        <div class="row mt-2">
+          <div class="col-md-12"><label class="labels">Name</label><input type="text" class="form-control"
+              placeholder="First name" value=""></div>
+          
+        </div>
+          <div class="row mt-2">
+         
+            <div class="col-md-12"><label class="labels">Last Name</label><input type="text" class="form-control" value=""
+                placeholder="LastName"></div>
+          </div>
+        <div class="row mt-3">
+        
+          <div class="col-md-12"><label class="labels">Work Email</label><input type="text" class="form-control"
+              placeholder=" {{ currentUser.email }}" value=""><hr></div>
+              
+
+  <div class="hui-col-9">
+    <label class="hui-label mt-0" for="user_role">Permissions</label>
+    <div class="permission-description mt-0 mb-0">You’re a <strong>Regular User</strong>. You can track time and
+      expenses, and report on your own data. You can only see project reports if they’re shared with you. <a
+        target="_blank" rel="noopener"
+        href="http://localhost:8081">Learn
+        more</a></div>
+  
+<hr>
+
+
+         
+        <div class="hui-form-field hui-row">
+          <div class="hui-col-3">
+            <label class="hui-label" for="user_settings_attributes_avatar">Photo</label>
+          </div>
+          <div class="hui-col-9">
+        
+            <input accept="image/gif, image/jpeg, image/jpg, image/png" type="file" name="user[settings_attributes][avatar]"
+              id="user_settings_attributes_avatar" />
+            <div class="hui-form-field-notes">Suggested size: 100x100</div>
+          </div>
+        </div>
+      
+          <hr>
+          <div class="hui-form-field hui-row">
+            <div class="hui-col-3">
+              <label class="hui-label">Home</label>
+            </div>
+            <div class="hui-col-9">
+              <div class="hui-checkbox mb-10">
+                <input name="user[first_timer]" type="hidden" value="0" /><input type="checkbox" value="1" checked="checked"
+                  name="user[first_timer]" id="user_first_timer" />
+                <label for="user_first_timer">Show the Welcome home page</label>
+              </div>
+            </div>
+          </div>
+        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button>
+        </div>
+      </div>
+    </div>
+    
+</div>
+

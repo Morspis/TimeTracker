@@ -304,3 +304,9 @@ textarea{
   padding:px;
 
 }
+button{
+  background-color: rgb(29, 173, 48);
+  border-style: solid;
+  border-color: rgb(49, 163, 138);
+
+}
