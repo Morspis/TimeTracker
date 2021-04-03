@@ -24,6 +24,14 @@ import { BoardUserComponent } from './components/board-user/board-user.component
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { FullCalendarModule } from '@fullcalendar/angular'; // the main connector. must go first
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
+//import interactionPlugin from '@fullcalendar/interaction'; // a plugin
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  //interactionPlugin
+]);
 
 @NgModule({
   declarations: [
@@ -49,7 +57,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    FullCalendarModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

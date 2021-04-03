@@ -9,6 +9,7 @@ import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TokenStorageService } from './services/token-storage.service';
 
+import { CalendarOptions } from '@fullcalendar/angular'; // useful for typechecking
 
 
 @Component({
@@ -23,7 +24,9 @@ export class AppComponent implements OnInit, OnDestroy {
   showModeratorBoard = false;
   username?: string;
 
- 
+  calendarOptions: CalendarOptions = {
+    initialView: 'dayGridMonth'
+  };
 
 constructor(private appService: AppService, private tokenStorageService: TokenStorageService) {}
 
