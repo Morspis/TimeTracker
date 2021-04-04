@@ -1,6 +1,8 @@
 
 <app-add-time #myModal *ngIf="isLoggedIn"></app-add-time>
 <full-calendar [options]="" *ngIf="isLoggedIn"></full-calendar>
+<button (click)="addTime()" class="w3-button w3-xlarge w3-teal">+</button>
+
 <!--
   <div class="main"> 
     <div class="entry">
@@ -32,7 +34,7 @@
   </div>
 -->
 
-<div class="container">
+<div class="container" *ngIf = "!isLoggedIn">
   <header class="jumbotron">
     <p>{{ content }}</p>
   </header>

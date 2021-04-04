@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Time } from 'src/app/models/time.model';
 import { TimeService } from 'src/app/services/time.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { TokenStorageService } from '../../services/token-storage.service';
+
 
 @Component({
   selector: 'app-add-time',
@@ -16,19 +18,25 @@ export class AddTimeComponent implements OnInit {
     date: '',
     teamName: ''
   };
+  currentUser: any;
   @ViewChild('content') content: any;
   submitted = false;
   closeResult: string | undefined;
 
-  constructor(private timeService: TimeService, private modal: NgbModal) { }
+  constructor(private timeService: TimeService,
+    private modal: NgbModal, 
+    private token: TokenStorageService) { }
 
   ngOnInit(): void {
+    this.currentUser = this.token.getUser();
+    this.time.userID = this.currentUser.id;
   }
 
   saveTime(): void {
     const data = {
       numMinutes: this.time.numMinutes,
-      description: this.time.description
+      description: this.time.description,
+      userID: this.time.userID
     };
 
     this.timeService.create(data)

@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
   }
   
   toString(role: string[]): String {
-    if (role = ['ROLE_ADMIN']){
+    if (role == ['ROLE_ADMIN']){
       return 'Admin'
     }
     else {

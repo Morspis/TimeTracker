@@ -49,12 +49,12 @@
 
 
     </div>
-    <div class="wrapper fadeInDown" *ngIf = "isLoggedIn">
-      <a routerLink="/home" class="nav-link"> Lets log some times! </a>
+    <div class="" *ngIf = "isLoggedIn">
+      <button routerLink="/home" class="btn btn-success"> Lets log some times! </button>
     </div>
 
 
-    <div id="formFooter">
+    <div id="formFooter" *ngIf ="!isLoggedIn">
       <a class="underlineHover" href="#">Forgot Password?</a>
     </div>
 
