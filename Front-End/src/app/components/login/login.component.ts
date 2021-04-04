@@ -49,4 +49,13 @@ export class LoginComponent implements OnInit {
   reloadPage(): void {
     window.location.reload();
   }
+  
+  toString(role: string[]): String {
+    if (role = ['ROLE_ADMIN']){
+      return 'Admin'
+    }
+    else {
+      return 'User'
+    }
+  }
 }

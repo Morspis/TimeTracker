@@ -1,6 +1,6 @@
 
-<app-add-time #myModal></app-add-time>
-<full-calendar [options]="calendarOptions"></full-calendar>
+<app-add-time #myModal *ngIf="isLoggedIn"></app-add-time>
+<full-calendar [options]="" *ngIf="isLoggedIn"></full-calendar>
 <!--
   <div class="main"> 
     <div class="entry">
@@ -32,7 +32,11 @@
   </div>
 -->
 
-  
+<div class="container">
+  <header class="jumbotron">
+    <p>{{ content }}</p>
+  </header>
+</div>
     <router-outlet></router-outlet>
    
 
