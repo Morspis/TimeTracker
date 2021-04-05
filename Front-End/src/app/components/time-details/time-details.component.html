@@ -1,15 +1,15 @@
 <div>
-    <div *ngIf="currentTutorial.id" class="edit-form">
-      <h4>Tutorial</h4>
+    <div *ngIf="currentTime.id" class="edit-form">
+      <h4>Time</h4>
       <form>
         <div class="form-group">
-          <label for="title">Title</label>
+          <label for="numMinutes">Time in Minutes</label>
           <input
             type="text"
             class="form-control"
-            id="title"
-            [(ngModel)]="currentTutorial.title"
-            name="title"
+            id="numMinutes"
+            [(ngModel)]="currentTime.numMinutes"
+            name="numMinutes"
           />
         </div>
         <div class="form-group">
@@ -18,48 +18,48 @@
             type="text"
             class="form-control"
             id="description"
-            [(ngModel)]="currentTutorial.description"
+            [(ngModel)]="currentTime.description"
             name="description"
           />
         </div>
-  
+<!--   
         <div class="form-group">
           <label><strong>Status:</strong></label>
-          {{ currentTutorial.published ? "Published" : "Pending" }}
-        </div>
+          {{ currentTime.published ? "Published" : "Pending" }}
+        </div> -->
       </form>
   
-      <button
+      <!-- <button
         class="badge badge-primary mr-2"
-        *ngIf="currentTutorial.published"
+        *ngIf="currentTime.published"
         (click)="updatePublished(false)"
       >
         UnPublish
       </button>
       <button
-        *ngIf="!currentTutorial.published"
+        *ngIf="!currentTime.published"
         class="badge badge-primary mr-2"
         (click)="updatePublished(true)"
       >
         Publish
-      </button>
+      </button> -->
   
-      <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
+      <button class="badge badge-danger mr-2" (click)="deleteTime()">
         Delete
       </button>
   
       <button
         type="submit"
         class="badge badge-success mb-2"
-        (click)="updateTutorial()"
+        (click)="updateTime()"
       >
         Update
       </button>
       <p>{{ message }}</p>
     </div>
   
-    <div *ngIf="!currentTutorial.id">
+    <div *ngIf="!currentTime.id">
       <br />
-      <p>Cannot access this Tutorial...</p>
+      <p>Cannot access this Time...</p>
     </div>
   </div>

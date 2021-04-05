@@ -1,5 +1,5 @@
 exports.allAccess = (req, res) => {
-    res.status(200).send("Public Content.");
+    res.status(200).send("Welcome to Summa Time\nPlease Log in or Register to Start Tracking Your Times!");
   };
   
   exports.userBoard = (req, res) => {
