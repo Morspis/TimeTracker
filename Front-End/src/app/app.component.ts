@@ -10,7 +10,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TokenStorageService } from './services/token-storage.service';
 
 import { CalendarOptions } from '@fullcalendar/angular'; // useful for typechecking
-
+import { Calendar } from '@fullcalendar/core'
+import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import listPlugin from '@fullcalendar/list';
 
 @Component({
   selector: 'app-root',
@@ -24,9 +27,8 @@ export class AppComponent implements OnInit, OnDestroy {
   showModeratorBoard = false;
   username?: string;
 
-  calendarOptions: CalendarOptions = {
-    initialView: 'dayGridMonth'
-  };
+  
+  
 
 constructor(private appService: AppService, private tokenStorageService: TokenStorageService) {}
 

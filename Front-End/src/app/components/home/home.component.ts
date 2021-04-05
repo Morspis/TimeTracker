@@ -2,6 +2,11 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { AddTimeComponent } from '../add-time/add-time.component';
 import { TokenStorageService } from '../../services/token-storage.service';
+import { CalendarOptions } from '@fullcalendar/core';
+
+
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,6 +19,17 @@ export class HomeComponent implements OnInit {
   constructor(private userService: UserService, private tokenStorage: TokenStorageService) { }
   isLoggedIn = false;
 
+  calendarOptions: CalendarOptions = {
+    initialView: 'dayGridWeek',
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'listWeek'
+    },
+    selectable: true,
+    select: function(info) {
+    }
+  };
 
   ngOnInit(): void {
     //Checks if logged in
