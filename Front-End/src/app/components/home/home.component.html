@@ -1,9 +1,10 @@
 
 <app-add-time #myModal *ngIf="isLoggedIn"></app-add-time>
 <full-calendar [options]="calendarOptions" *ngIf="isLoggedIn"></full-calendar>
-<button (click)="addTime()" class="w3-button w3-xlarge w3-teal">+</button>
 
-<!--
+<!--<button (click)="addTime()" class="w3-button w3-xlarge w3-teal">+</button>
+
+
   <div class="main"> 
     <div class="entry">
       
@@ -12,39 +13,25 @@
     
     </div>
 
-    <div class="calendar">
-      <div class="top">
-        <button><div><span>&#8249;</span></div></button>
-        <button><div><span>&#8250;</span></div></button>
-        <p class="date"><strong>Today:</strong>insert date here</p>
-      </div>
-      <div class="time-content">
-        <div class="container space-around">
-        <div class="outline l">M 0:00</div>
-        <div class="outline"><button>T 0:00</button></div>
-        <div class="outline"><button>W</button></div>
-        <div class="outline"><button>Th</button></div>
-        <div class="outline"><button>F</button></div>
-        <div class="outline"><button>S</button></div>
-        <div class="outline r"><button>Su</button></div>
-        </div>
-      </div>
-    </div>
-    
   </div>
 -->
 
 <div class="container" *ngIf = "!isLoggedIn">
-  <header class="jumbotron">
-    <p>{{ content }}</p>
-  </header>
+
+<div>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="jumbotron jumbotron-fluid">
+       
+        <h1 class="display-4">Welcome to SummaTime<div class="fadeInDown2">The easy to use time logging application</div><div class="fadeInDown3">To get started, <a routerLink="/register">Sign Up</a> today!</div>
+        
+        </h1>
+      
+      </div>
+    </div>
+    
+  </div>
+</div>
 </div>
     <router-outlet></router-outlet>
    
-
-
-
-
-
-
- 
