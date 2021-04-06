@@ -1,7 +1,7 @@
 
 <app-add-time #myModal *ngIf="isLoggedIn"></app-add-time>
-<full-calendar [options]="calendarOptions" *ngIf="isLoggedIn"></full-calendar>
-<button (click)="addTime()" class="w3-button w3-xlarge w3-teal">+</button>
+<full-calendar #myCalendar [options]="calendarOptions" *ngIf="isLoggedIn"></full-calendar>
+<!-- <button (click)="addTime()" class="w3-button w3-xlarge w3-teal">+</button> -->
 
 <!--
   <div class="main"> 

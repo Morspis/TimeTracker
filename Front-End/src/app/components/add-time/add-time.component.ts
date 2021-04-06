@@ -3,6 +3,7 @@ import { Time } from 'src/app/models/time.model';
 import { TimeService } from 'src/app/services/time.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TokenStorageService } from '../../services/token-storage.service';
+import { HomeComponent } from '../home/home.component'
 
 
 @Component({
@@ -22,10 +23,12 @@ export class AddTimeComponent implements OnInit {
   @ViewChild('content') content: any;
   submitted = false;
   closeResult: string | undefined;
+  
 
   constructor(private timeService: TimeService,
     private modal: NgbModal, 
-    private token: TokenStorageService) { }
+    private token: TokenStorageService,
+    private home: HomeComponent){ }
 
   ngOnInit(): void {
     this.currentUser = this.token.getUser();
@@ -36,7 +39,8 @@ export class AddTimeComponent implements OnInit {
     const data = {
       numMinutes: this.time.numMinutes,
       description: this.time.description,
-      userID: this.time.userID
+      userID: this.time.userID,
+      date: this.time.date,
     };
 
     this.timeService.create(data)
@@ -48,6 +52,9 @@ export class AddTimeComponent implements OnInit {
         error => {
           console.log(error);
         });
+    this.home.calendarOptions.events = [{title: data.numMinutes! + " Minutes : " + data.description!,
+                                         start: data.date,
+                                         allDay: true}]
   }
 
   newTime(): void {

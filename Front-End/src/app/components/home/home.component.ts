@@ -2,9 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { AddTimeComponent } from '../add-time/add-time.component';
 import { TokenStorageService } from '../../services/token-storage.service';
-import { CalendarOptions } from '@fullcalendar/core';
-
-
+import { Calendar, CalendarOptions, DateSelectArg } from '@fullcalendar/core';
 
 
 @Component({
@@ -16,6 +14,7 @@ export class HomeComponent implements OnInit {
   content?: string;
 
   @ViewChild('myModal') modal!: AddTimeComponent;
+  @ViewChild('myCalendar') calendar!: Calendar;
   constructor(private userService: UserService, private tokenStorage: TokenStorageService) { }
   isLoggedIn = false;
 
@@ -27,8 +26,7 @@ export class HomeComponent implements OnInit {
       right: 'listWeek'
     },
     selectable: true,
-    select: function(info) {
-    }
+    select: this.addTime.bind(this)
   };
 
   ngOnInit(): void {
@@ -47,7 +45,8 @@ export class HomeComponent implements OnInit {
       this.isLoggedIn = true;
     }
   }
-  addTime() {
-    this.modal.open();
+  addTime(arg: DateSelectArg) {
+    this.modal.time.date = String(arg.startStr)
+    this.modal.open()
   }
 }

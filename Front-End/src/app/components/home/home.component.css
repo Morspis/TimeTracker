@@ -82,3 +82,7 @@ width:20%;
 .modal-dialog {
   flex-grow: 1;
 }
+
+.fc {
+  height: 200px;
+}
