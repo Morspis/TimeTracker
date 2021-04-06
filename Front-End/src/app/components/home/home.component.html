@@ -1,8 +1,14 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<div class= "fullscreen">
+  <div class="twenty">
+    <button (click)="addTime()" class="w3-button w3-xlarge w3-teal">+</button>
 
-<app-add-time #myModal *ngIf="isLoggedIn"></app-add-time>
-<full-calendar [options]="calendarOptions" *ngIf="isLoggedIn"></full-calendar>
-
-<button (click)="addTime()" class="w3-button w3-xlarge w3-teal">+</button>
+  </div>
+  <div class="eighty">
+    <app-add-time #myModal *ngIf="isLoggedIn"></app-add-time>
+    <full-calendar [options]="calendarOptions" *ngIf="isLoggedIn"></full-calendar>
+  </div>
+ 
 
 <!--
   <div class="main"> 
@@ -31,6 +37,7 @@
     </div>
     
   </div>
+</div>
 </div>
 </div>
     <router-outlet></router-outlet>
