@@ -45,8 +45,8 @@ export class HomeComponent implements OnInit {
       this.isLoggedIn = true;
     }
   }
-  addTime(arg: DateSelectArg) {
-    this.modal.time.date = String(arg.startStr)
+  addTime() {
+    //this.modal.time.date = String(arg.startStr)
     this.modal.open()
   }
 }
