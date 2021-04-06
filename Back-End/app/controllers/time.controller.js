@@ -51,6 +51,39 @@ exports.findAll = (req, res) => {
       });
   };
 
+  exports.findAllByProject = (req, res) => {
+    const teamName = req.query.teamName;
+    var condition = teamName ? { teamName: { [Op.like]: `%${teamName}%` } } : null;
+  
+    Time.findAll({ where: condition })
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while retrieving times."
+        });
+      });
+  };
+
+  exports.findAllByDate = (req, res) => {
+    const date = req.query.date;
+    const userID = req.query.userID;
+    var condition = (date ? { date: { [Op.like]: `%${date}%` } } : null) && (userID ? { userID: { [Op.like]: `%${userID}%` } } : null);
+  
+    Time.findAll({ where: condition })
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while retrieving times."
+        });
+      });
+  };
+
 // Find a single Time with an id
 exports.findOne = (req, res) => {
     const id = req.params.id;

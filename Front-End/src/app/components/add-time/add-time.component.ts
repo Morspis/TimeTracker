@@ -17,7 +17,7 @@ export class AddTimeComponent implements OnInit {
     description: '',
     userID: 0,
     date: '',
-    teamName: ''
+    teamName: '',
   };
   currentUser: any;
   @ViewChild('content') content: any;
@@ -41,6 +41,7 @@ export class AddTimeComponent implements OnInit {
       description: this.time.description,
       userID: this.time.userID,
       date: this.time.date,
+      project: this.time.teamName,
     };
 
     this.timeService.create(data)
@@ -52,7 +53,7 @@ export class AddTimeComponent implements OnInit {
         error => {
           console.log(error);
         });
-    this.home.calendarOptions.events = [{title: data.numMinutes! + " Minutes : " + data.description!,
+    this.home.calendarOptions.events = [{title: data.numMinutes! + " Minutes :\n " + data.description!,
                                          start: data.date,
                                          allDay: true}]
   }

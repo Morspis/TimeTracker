@@ -19,8 +19,6 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { MenuComponent } from './menu/menu.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BoardAdminComponent } from './components/board-admin/board-admin.component';
-import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
-import { BoardUserComponent } from './components/board-user/board-user.component'
 
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -52,8 +50,6 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     TimeDetailsComponent,
     RegisterComponent,
     BoardAdminComponent,
-    BoardModeratorComponent,
-    BoardUserComponent,
     MenuComponent,
     
   ],

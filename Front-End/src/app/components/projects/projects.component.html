@@ -1,2 +1,18 @@
-<h1>Projects View Page</h1>
-<h2>Under Construction</h2>
+<div class="form-group" *ngIf="!projectSelected">
+    <label for="teamName">Team Name</label>
+    <select
+      class="form-control"
+      id="teamName"
+      required
+      name="teamName"
+    >
+    <option value="Testing Team">Testing Team</option>
+    </select>
+    <br>
+    <button class = "btn btn-primary" (click)="selectProject()">Submit</button>
+</div>
+<div *ngIf="projectSelected">
+    
+
+</div>
+

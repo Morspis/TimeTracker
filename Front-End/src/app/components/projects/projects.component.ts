@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
-
+  projectSelected: Boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  selectProject(): void {
+    this.projectSelected = true;
+  }
 }

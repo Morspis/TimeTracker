@@ -4,7 +4,7 @@
         <input
           type="text"
           class="form-control"
-          placeholder="Search by User ID"
+          placeholder="Search Times by userID"
           [(ngModel)]="userID"
         />
         <div class="input-group-append">
@@ -27,7 +27,9 @@
           [class.active]="i == currentIndex"
           (click)="setActiveTime(time, i)"
         >
-          {{ time.numMinutes }}
+        UID: {{ time.userID }} <br>
+        {{ time.numMinutes }} Minutes <br>
+        Date: {{ time.date }}
         </li>
       </ul>
   
@@ -37,13 +39,21 @@
     </div>
     <div class="col-md-6">
       <div *ngIf="currentTime">
-        <h4>Time</h4>
+        <h4>Time Details</h4>
         <div>
-          <label><strong>Title:</strong></label> {{ currentTime.numMinutes }}
+          <label><strong>Time:</strong></label> {{ currentTime.numMinutes }} Minutes
         </div>
         <div>
           <label><strong>Description:</strong></label>
           {{ currentTime.description }}
+        </div>
+        <div>
+          <label><strong>Date:</strong></label>
+          {{ currentTime.date }}
+        </div>
+        <div>
+          <label><strong>User ID:</strong></label>
+          {{ currentTime.userID }}
         </div>
         <!-- <div>
           <label><strong>Status:</strong></label>

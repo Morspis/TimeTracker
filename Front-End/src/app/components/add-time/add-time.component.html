@@ -15,6 +15,18 @@
           />          
         </div>
         <div class="form-group">
+          <label for="teamName">Team Name</label>
+          <select
+            class="form-control"
+            id="teamName"
+            required
+            [(ngModel)]="time.teamName"
+            name="teamName"
+          >
+          <option value="Testing Team">Testing Team</option>
+          </select>
+        </div>  
+        <div class="form-group">
           <label for="numMinutes">Time in Minutes</label>
           <input
             type="number"

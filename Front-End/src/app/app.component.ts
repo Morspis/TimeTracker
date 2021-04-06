@@ -27,9 +27,6 @@ export class AppComponent implements OnInit, OnDestroy {
   showModeratorBoard = false;
   username?: string;
 
-  
-  
-
 constructor(private appService: AppService, private tokenStorageService: TokenStorageService) {}
 
   title = 'Summa Time';

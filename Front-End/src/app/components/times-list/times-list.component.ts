@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Time } from 'src/app/models/time.model';
 import { TimeService } from 'src/app/services/time.service';
+import { UserService } from '../../services/user.service'
 
 @Component({
   selector: 'app-times-list',
@@ -12,9 +13,9 @@ export class TimesListComponent implements OnInit {
   currentTime?: Time;
   currentIndex = -1;
   numMinutes = 0;
-  userID = 0;
+  userID?: Number;
 
-  constructor(private timeService: TimeService) { }
+  constructor(private timeService: TimeService, private userService: UserService) { }
 
   ngOnInit(): void {
     this.retrieveTimes();
@@ -56,7 +57,7 @@ export class TimesListComponent implements OnInit {
   }
 
   searchTitle(): void {
-    this.timeService.findByTitle(this.userID)
+    this.timeService.findByUID(this.userID)
       .subscribe(
         data => {
           this.times = data;

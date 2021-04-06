@@ -35,7 +35,7 @@ export class TimeService {
     return this.http.delete(baseUrl);
   }
 
-  findByTitle(title:any): Observable<any> {
-    return this.http.get(`${baseUrl}?title=${title}`);
+  findByUID(userID:any): Observable<any> {
+    return this.http.get(`${baseUrl}?userID=${userID}`);
   }
 }
