@@ -133,3 +133,11 @@ label{
   .top{
     margin-top: 20px;
   }
+
+  .btn{
+    margin-bottom:10px;
+  }
+
+  .alert{
+    margin-top:30px;
+  }

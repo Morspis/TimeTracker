@@ -14,7 +14,6 @@ body{
   display:flex;
 }
 
-
 .calendar{
   height:100%;
   width:60%;
@@ -257,4 +256,28 @@ body{
 .welcome{
   font-size: 3em;
   margin-left: 20px;
+}
+
+.bottombox{
+  display:flex;
+  width:100%;
+  height:75px;  
+}
+
+.fullscreen{
+  display:flex;
+height:100%;
+width:100%;
+}
+
+.twenty{
+  width:5%;
+  height:100%;
+  margin-right: 20px;
+  margin-top: 61px;
+}
+
+.eighty{
+  width:80%;
+  height:100%;
 }
