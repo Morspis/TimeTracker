@@ -1,10 +1,9 @@
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<div class= "fullscreen">
-  <div class="twenty">
-    <button (click)="addTime()" class="w3-button w3-xlarge w3-teal">+</button>
+<div class= "fullscreen" *ngIf="isLoggedIn">
+  <div class="twenty" *ngIf="isLoggedIn">
+    <button *ngIf="isLoggedIn" (click)="addTime()" class="w3-button w3-xlarge w3-teal">+</button>
 
   </div>
-  <div class="eighty">
+  <div class="eighty" *ngIf="isLoggedIn">
     <app-add-time #myModal *ngIf="isLoggedIn"></app-add-time>
     <full-calendar [options]="calendarOptions" *ngIf="isLoggedIn"></full-calendar>
   </div>
