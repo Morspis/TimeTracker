@@ -15,6 +15,10 @@ export class TimeService {
     return this.http.get(baseUrl);
   }
 
+  getAllByProject(teamName:any): Observable<any> {
+    return this.http.get(`${baseUrl}/${teamName}`);
+  }
+
   get(id:any): Observable<any> {
     return this.http.get(`${baseUrl}/${id}`);
   }

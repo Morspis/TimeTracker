@@ -1,6 +1,5 @@
 const { authJwt } = require("../middleware");
 const controller = require("../controllers/user.controller");
-
 module.exports = function(app) {
   app.use(function(req, res, next) {
     res.header(
@@ -9,6 +8,15 @@ module.exports = function(app) {
     );
     next();
   });
+
+  var router = require("express").Router();
+
+    router.use(function (req, res, next) {
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        res.setHeader("Content-Type", "application/json");
+        return next();
+    });
 
   app.get("/api/test/all", controller.allAccess);
 
@@ -29,4 +37,6 @@ module.exports = function(app) {
     [authJwt.verifyToken, authJwt.isAdmin],
     controller.adminBoard
   );
+
+  app.get("/api/test/:userID", controller.findUser);
 };

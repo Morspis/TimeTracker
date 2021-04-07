@@ -19,6 +19,9 @@ module.exports = app => {
     // Retrieve all Times
     router.get("/", times.findAll);
 
+    // Retrieve all by team
+    router.get("/:teamName", times.findAllByProject);
+
     // Retrieve all published Times
     router.get("/published", times.findAllPublished);
 
