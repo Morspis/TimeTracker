@@ -1,6 +1,6 @@
 <div class= "fullscreen" *ngIf="isLoggedIn">
   <div class="twenty" *ngIf="isLoggedIn">
-    <button (click)="addTime()" class="w3-button w3-xlarge w3-teal">+</button>
+    <button *ngIf="isLoggedIn" (click)="addTime()" class="w3-button w3-xlarge w3-teal">+</button>
 
   </div>
   <div class="eighty" *ngIf="isLoggedIn">
