@@ -17,14 +17,50 @@
       </div>
 
       <div class="ninety">
+        <div class="fullscreen">
+          <div class="fifty">
+            <li class="list-group-item">
+              Name: Ethan Walser
+              </li>
+
+              <li class="list-group-item">
+                Name: Tyler Dys
+                </li>
+
+                <li class="list-group-item">
+                  Name: Suman Gurung
+                  </li>
+
+          </div>
+
+          <div class="fifty">
+            <li class="list-group-item" *ngFor="let time of times; let i = index" [class.active]="i == currentIndex">
+              UID: 1 <br>
+              15 Minutes <br>
+              Date: {{ time.date }}
+            </li>
+
+            <li class="list-group-item" *ngFor="let time of times; let i = index" [class.active]="i == currentIndex">
+              UID: 2 <br>
+              {{ time.numMinutes }} Minutes <br>
+              Date: {{ time.date }}
+            </li>
+
+            <li class="list-group-item" *ngFor="let time of times; let i = index" [class.active]="i == currentIndex">
+              UID: 3 <br>
+              60 Minutes <br>
+              Date: {{ time.date }}
+            </li>
+            
+            
+          </div>
+
         <p>{{ sum }}</p>
 
-        <li class="list-group-item" *ngFor="let time of times; let i = index" [class.active]="i == currentIndex">
-          UID: {{ time.userID }} <br>
-          {{ time.numMinutes }} Minutes <br>
-          Date: {{ time.date }}
-        </li>
-        <h2>{{ user2 }}</h2>
+
+        
+        <h2>{{ uName1 }}</h2>
+      </div>
       </div>
     </div>
   </div>

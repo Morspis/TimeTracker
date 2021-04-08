@@ -33,3 +33,15 @@
     max-width: 750px;
     margin: auto;
   }
+
+.fifty{
+    width:50%;
+    height:100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-group-item{
+    height:95px !important;
+
+}
