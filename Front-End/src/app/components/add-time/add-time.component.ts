@@ -49,13 +49,17 @@ export class AddTimeComponent implements OnInit {
         response => {
           console.log(response);
           this.submitted = true;
+          this.home.calendarOptions.events = [{title: data.numMinutes! + " Minutes :\n " + data.description!,
+                                         start: String(data.date),
+                                         allDay: true}];
+                                        
+          // this.home.redoEvents();
+          // console.log(this.home.events);
         },
         error => {
           console.log(error);
         });
-    this.home.calendarOptions.events = [{title: data.numMinutes! + " Minutes :\n " + data.description!,
-                                         start: data.date,
-                                         allDay: true}]
+    
   }
 
   newTime(): void {

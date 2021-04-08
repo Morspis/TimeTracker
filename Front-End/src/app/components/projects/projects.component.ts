@@ -19,7 +19,7 @@ export class ProjectsComponent implements OnInit {
   teamName = "testingTeam"; //FIXME
   user?: User;
   sum?: Number;
-
+  
   constructor(private timeService: TimeService, private userService: UserService) { }
 
   ngOnInit(): void {

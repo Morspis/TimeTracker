@@ -11,10 +11,10 @@
     <br>
     <button class = "btn btn-primary" (click)="selectProject()">Submit</button>
 </div>
-<!-- <div *ngIf="projectSelected"> -->
+<div *ngIf="projectSelected">
     <p>{{ sum }}</p>
 
-    <!-- <li
+    <li
           class="list-group-item"
           *ngFor="let time of times; let i = index"
           [class.active]="i == currentIndex"
@@ -23,9 +23,9 @@
         UID: {{ time.userID }} <br>
         {{ time.numMinutes }} Minutes <br>
         Date: {{ time.date }}
-        </li> -->
+        </li>
         <h2>{{ user }}</h2>
-<!-- </div> -->
+</div>
 
 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { AddTimeComponent } from '../add-time/add-time.component';
 import { TokenStorageService } from '../../services/token-storage.service';
@@ -14,9 +14,11 @@ export class HomeComponent implements OnInit {
   content?: string;
 
   @ViewChild('myModal') modal!: AddTimeComponent;
-  @ViewChild('myCalendar') calendar!: Calendar;
+  @ViewChildren('myCalendar') calendar!: Calendar;
   constructor(private userService: UserService, private tokenStorage: TokenStorageService) { }
   isLoggedIn = false;
+  selectedDate = '';
+  // events = [{title: "Test", start: "2021-04-06", allDay: true}]
 
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridWeek',
@@ -25,8 +27,9 @@ export class HomeComponent implements OnInit {
       center: 'title',
       right: 'listWeek'
     },
+    // events: this.events,
     selectable: true,
-    select: this.addTime.bind(this)
+    select: this.setDate.bind(this)
   };
 
   ngOnInit(): void {
@@ -48,5 +51,17 @@ export class HomeComponent implements OnInit {
   addTime() {
     //this.modal.time.date = String(arg.startStr)
     this.modal.open()
+    
   }
+
+  setDate(arg: DateSelectArg) {
+    this.selectedDate = String(arg.startStr)
+    this.modal.time.date = this.selectedDate;
+  }
+  
+  // redoEvents(){
+  //   this.calendarOptions.events = '';
+  //   this.calendarOptions.events = this.events;
+  // }
+
 }
