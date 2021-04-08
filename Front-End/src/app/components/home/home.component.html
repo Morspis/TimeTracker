@@ -6,7 +6,22 @@
   <div class="eighty" *ngIf="isLoggedIn">
     <app-add-time #myModal *ngIf="isLoggedIn"></app-add-time>
     <full-calendar [options]="calendarOptions" *ngIf="isLoggedIn"></full-calendar>
-  </div>
+    
+
+    <!-- <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let time of times; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTime(time, i)"
+      >
+      UID: {{ time.userID }} <br>
+      {{ time.numMinutes }} Minutes <br>
+      Date: {{ time.date }}
+      </li>
+    </ul>
+  </div> -->
+
 
  
 

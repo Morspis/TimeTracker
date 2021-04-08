@@ -38,7 +38,7 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
     const userID = req.query.userID;
     var condition = userID ? { userID: { [Op.like]: `%${userID}%` } } : null;
-  
+    console.log("Amongus");
     Time.findAll({ where: condition })
       .then(data => {
         res.send(data);
@@ -68,11 +68,11 @@ exports.findAll = (req, res) => {
   };
 
   exports.findAllByDate = (req, res) => {
-    const date = req.query.date;
+    const findDate = req.query.date;
     const userID = req.query.userID;
-    var condition = (date ? { date: { [Op.like]: `%${date}%` } } : null) && (userID ? { userID: { [Op.like]: `%${userID}%` } } : null);
-  
-    Time.findAll({ where: condition })
+    var condition = (date ? { date: { [Op.eq]: `%${findDate}%` } } : null);
+    console.log(findDate);
+    Time.findAll({ where: {condition} })
       .then(data => {
         res.send(data);
       })

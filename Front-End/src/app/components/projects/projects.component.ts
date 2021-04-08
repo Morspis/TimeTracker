@@ -18,7 +18,14 @@ export class ProjectsComponent implements OnInit {
   numMinutes = 0;
   teamName = "testingTeam"; //FIXME
   user?: User;
-  sum?: Number;
+  sum1 = 0;
+  sum2 = 0;
+  sum3 = 0;
+
+  uName1 = '';
+  uName2 = '';
+  uName3 = '';
+  
   
   constructor(private timeService: TimeService, private userService: UserService) { }
 
@@ -29,8 +36,12 @@ export class ProjectsComponent implements OnInit {
   selectProject(): void {
     this.projectSelected = true;
     
-    this.calcTotalTime(1);
-    this.getUserName(1);
+    this.sum1 = this.calcTotalTime(1);
+    this.sum2 = this.calcTotalTime(2);
+    this.sum3 = this.calcTotalTime(3);
+    this.uName1 = this.getUserName(1);
+    this.uName2 = this.getUserName(2);
+    this.uName3 = this.getUserName(3);
     // let index: any;
     // // for (index in this.times){
     // //   let userID = this.times![index].userID;
@@ -50,7 +61,7 @@ export class ProjectsComponent implements OnInit {
         });
   }
 
-  calcTotalTime(userID: number): void {
+  calcTotalTime(userID: number): number {
     let index: any;
     let sum = 0;
     for (index in this.times) {
@@ -58,18 +69,20 @@ export class ProjectsComponent implements OnInit {
         sum += this.times![index].numMinutes!;
       }
     }
-    this.sum = sum;
+    return sum;
   }
 
-  getUserName(userID: any): void {
+  getUserName(userID: any): string {
     
     this.userService.getUser(userID).subscribe(
       data => {
         this.user = data;
         console.log(data);
+        return this.user;
       },
       error => {
         console.log(error);
       });
+      return null!;
   }
 }
