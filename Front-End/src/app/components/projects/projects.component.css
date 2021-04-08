@@ -1,0 +1,35 @@
+.fullscreen{
+  display:flex;
+  height:1000px;
+  width:100%;
+}
+
+.sixty{
+    height:60% !important;
+    width:100% !important;
+}
+
+.ten{
+    height:10%;
+    width:100%;
+}
+
+.ninety{
+    height:90%;
+    width:100%;
+}
+
+.form-group{
+    width:100%;
+}
+
+.container{
+    width:100% !important;
+    height:100% !important;
+}
+
+.list {
+    text-align: left;
+    max-width: 750px;
+    margin: auto;
+  }
