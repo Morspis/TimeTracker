@@ -1,31 +1,34 @@
 <div class="form-group" *ngIf="!projectSelected">
-    <label for="teamName">Team Name</label>
-    <select
-      class="form-control"
-      id="teamName"
-      required
-      name="teamName"
-    >
+  <!-- Not selected project-->
+  <label for="teamName">Team Name</label>
+  <select class="form-control" id="teamName" required name="teamName">
     <option value="Testing Team">Testing Team</option>
-    </select>
-    <br>
-    <button class = "btn btn-primary" (click)="selectProject()">Submit</button>
+  </select>
+  <br>
+  <button class="btn btn-primary" (click)="selectProject()">Submit</button>
 </div>
-<div *ngIf="projectSelected">
-    <p>{{ sum }}</p>
 
-    <li
-          class="list-group-item"
-          *ngFor="let time of times; let i = index"
-          [class.active]="i == currentIndex"
-          
-        >
-        UID: {{ time.userID }} <br>
-        {{ time.numMinutes }} Minutes <br>
-        Date: {{ time.date }}
+<div class="container" *ngIf="projectSelected">
+  <!-- Project Selected -->
+  <div class="fullscreen">
+    <div class="sixty">
+      <div class="ten">
+        <h1>All Time</h1>
+      </div>
+
+      <div class="ninety">
+        <p>{{ sum }}</p>
+
+        <li class="list-group-item" *ngFor="let time of times; let i = index" [class.active]="i == currentIndex">
+          UID: {{ time.userID }} <br>
+          {{ time.numMinutes }} Minutes <br>
+          Date: {{ time.date }}
         </li>
         <h2>{{ user }}</h2>
+      </div>
+    </div>
+  </div>
+
+
+
 </div>
-
-
-
