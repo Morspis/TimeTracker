@@ -32,4 +32,14 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('summa-time app is running!');
   });
+
+function myFunction() {
+  var x: any = document.getElementById("nav");
+  if (x.className === "header_nav") {
+    x.className += " responsive";
+  } else {
+    x.className = "header_nav";
+  }
+}
+
 });
