@@ -12,6 +12,8 @@ import { CommonModule } from '@angular/common'
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+  
+  
 export class HomeComponent implements OnInit {
   content?: string;
   times?: Time[];
@@ -107,4 +109,15 @@ export class HomeComponent implements OnInit {
   //   this.calendarOptions.events = this.events;
   // }
 
+
+  
+
+}
+function myFunction() {
+  var x: any = document.getElementById("nav");
+  if (x.className === "header_nav") {
+    x.className += " responsive";
+  } else {
+    x.className = "header_nav";
+  }
 }

@@ -1,4 +1,4 @@
-<div class="fullscreen">
+<div class= "fullscreen">
   <div class="twenty" *ngIf="isLoggedIn">
     <button *ngIf="isLoggedIn" (click)="addTime()" class="w3-button w3-xlarge w3-teal">+</button>
     <p class="smalltxt">New Entry</p>
@@ -6,9 +6,9 @@
   <div class="eighty" *ngIf="isLoggedIn">
     <app-add-time #myModal *ngIf="isLoggedIn"></app-add-time>
     <full-calendar [options]="calendarOptions" *ngIf="isLoggedIn"></full-calendar>
+  </div>
 
-
-     <ul class="list-group">
+    <!-- <ul class="list-group">
       <li
         class="list-group-item"
         *ngFor="let time of times; let i = index"
@@ -20,12 +20,12 @@
       Date: {{ time.date }}
       </li>
     </ul>
-  </div>
+  </div> -->
 
 
+ 
 
-
-<!--     
+<!--
   <div class="main"> 
     <div class="entry">
       
@@ -34,24 +34,19 @@
     
     </div>
 
-  </div> -->
+  </div>
+-->
 
+  <div class="container" *ngIf = "!isLoggedIn"><!-- Public Content -->
+    <div class="wrapper fadeInDown"><!-- Public fade down box -->
+      <div id="formContent"><!-- Form Content -->
+        <div class="jumbotron jumbotron-fluid"> <!-- Jumbotron -->
+          <h1 class="display-4">Welcome to SummaTime<div class="fadeInDown2">The easy to use time logging application</div><div class="fadeInDown3">To get started, <a routerLink="/register">Sign Up</a> today!</div></h1>
+        </div><!-- End Jumbotron -->
+      </div><!-- End Form Content -->
+    </div><!-- End Public fade down box -->
+  </div><!-- End public content -->
+</div><!-- End Full Screen -->
 
-    <div class="container" *ngIf="!isLoggedIn">
-      <!-- Public Content -->
-      <div class="wrapper fadeInDown">
-        <!-- Public fade down box -->
-        <div id="formContent">
-          <!-- Form Content -->
-          <div class="jumbotron jumbotron-fluid">
-            <!-- Jumbotron -->
-            <h1 class="display-4">Welcome to SummaTime<div class="fadeInDown2">The easy to use time logging application
-              </div>
-              <div class="fadeInDown3">To get started, <a routerLink="/register">Sign Up</a> today!</div>
-            </h1>
-          </div><!-- End Jumbotron -->
-        </div><!-- End Form Content -->
-      </div><!-- End Public fade down box -->
-    </div><!-- End public content -->
-  </div><!-- End Full Screen -->
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>
+   
