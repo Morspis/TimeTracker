@@ -21,8 +21,7 @@ export class TimeService {
   }
 
   getAllByDate(date: any): Observable<any> {
-    console.log("fuck you");
-    return this.http.get(`${baseUrl}/${date}`)
+    return this.http.get(`${baseUrl}/date/${date}`)
   }
 
   get(id:any): Observable<any> {

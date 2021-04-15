@@ -9,12 +9,6 @@ import { RouterModule, Router, NavigationEnd } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TokenStorageService } from './services/token-storage.service';
 
-import { CalendarOptions } from '@fullcalendar/angular'; // useful for typechecking
-import { Calendar } from '@fullcalendar/core'
-import dayGridPlugin from '@fullcalendar/daygrid';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import listPlugin from '@fullcalendar/list';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

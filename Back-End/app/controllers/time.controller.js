@@ -68,10 +68,9 @@ exports.findAll = (req, res) => {
   };
 
   exports.findAllByDate = (req, res) => {
-    const findDate = req.query.date;
-    const userID = req.query.userID;
-    var condition = (date ? { date: { [Op.eq]: `%${findDate}%` } } : null);
-    console.log(findDate);
+    const date = req.params.date;
+    var condition = (date ? { date: { [Op.like]: `%${date}%` } } : null);
+    console.log(date);
     Time.findAll({ where: {condition} })
       .then(data => {
         res.send(data);

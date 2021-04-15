@@ -5,7 +5,7 @@ import { TokenStorageService } from '../../services/token-storage.service';
 import { Calendar, CalendarOptions, DateSelectArg } from '@fullcalendar/core';
 import { TimeService } from '../../services/time.service'
 import { Time } from '../../models/time.model'
-import { InvokeFunctionExpr } from '@angular/compiler';
+import { CommonModule } from '@angular/common'
 
 @Component({
   selector: 'app-home',

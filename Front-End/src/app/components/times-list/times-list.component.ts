@@ -14,7 +14,7 @@ export class TimesListComponent implements OnInit {
   currentIndex = -1;
   numMinutes = 0;
   userID?: Number;
-
+  
   constructor(private timeService: TimeService, private userService: UserService) { }
 
   ngOnInit(): void {
@@ -67,5 +67,5 @@ export class TimesListComponent implements OnInit {
           console.log(error);
         });
   }
-
+  
 }

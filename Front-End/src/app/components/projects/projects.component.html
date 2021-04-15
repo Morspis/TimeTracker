@@ -10,6 +10,27 @@
 
 <div class="container" *ngIf="projectSelected">
   <!-- Project Selected -->
+  <h1> Project Progress </h1>
+  <h2> Testing Team </h2>
+  <ngx-charts-line-chart
+  [view] = "[1200,400]"
+  [legend]="legend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxis]="xAxis"
+  [yAxis]="yAxis"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [timeline]="timeline"
+  [results]="multi"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)"
+  >
+  </ngx-charts-line-chart>
+  
+
+
   <div class="fullscreen">
     <div class="sixty">
       <div class="ten">
@@ -40,17 +61,7 @@
                   <br>
                   Role: User
                   </li>
-                <ul class = "tempClass">All Times Tracked on Project</ul>
-                <li class="list-group-item" *ngFor="let time of times; let i = index" [class.active]="i == currentIndex">
-                  UserID: {{ time.userID }} <br>
-                  {{ time.numMinutes }} Minutes <br>
-                  Date: {{ time.date }}
-                </li>
-                <li class="list-group-item">
-                  UserID: 2 <br>
-                  40 Minutes <br>
-                  Date: 2021-03-26
-                </li> 
+                
           </div>
 
           <div class="fifty">

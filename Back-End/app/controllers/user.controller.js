@@ -29,7 +29,7 @@ exports.allAccess = (req, res) => {
       })
       .catch(err => {
         res.status(500).send({
-          message: "Error retrieving User with id=" + id
+          message: "Error retrieving User with id=" + userID
         });
       });   
   };

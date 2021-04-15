@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { Time } from 'src/app/models/time.model';
 import { TimeService } from 'src/app/services/time.service';
 import { User } from '../../models/user.model';
 import { UserService } from '../../services/user.service'
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { BrowserModule } from '@angular/platform-browser';
+import { multi } from './data';
 
 @Component({
   selector: 'app-projects',
@@ -26,8 +29,38 @@ export class ProjectsComponent implements OnInit {
   uName2 = '';
   uName3 = '';
   
+
+  // Graph Options
+  multi: any[] | undefined;
+  view: any[] = [700, 300];
+
+  legend: boolean = true;
+  showLabels: boolean = true;
+  animations: boolean = true;
+  xAxis: boolean = true;
+  yAxis: boolean = true;
+  showYAxisLabel: boolean = true;
+  showXAxisLabel: boolean = true;
+  xAxisLabel: string = 'Date';
+  yAxisLabel: string = 'Time Spent on Project (hours)';
+  timeline: boolean = true;
+
   
-  constructor(private timeService: TimeService, private userService: UserService) { }
+  constructor(private timeService: TimeService, private userService: UserService) {
+    Object.assign(this, { multi });
+   }
+
+   onSelect(data: any): void {
+    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+  }
+
+  onActivate(data: any): void {
+    console.log('Activate', JSON.parse(JSON.stringify(data)));
+  }
+
+  onDeactivate(data: any): void {
+    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
+  }
 
   ngOnInit(): void {
     this.retrieveTimes(this.teamName);
@@ -35,7 +68,7 @@ export class ProjectsComponent implements OnInit {
 
   selectProject(): void {
     this.projectSelected = true;
-    
+    //demo stuff
     this.sum1 = this.calcTotalTime(1);
     this.sum2 = this.calcTotalTime(2);
     this.sum3 = this.calcTotalTime(3);

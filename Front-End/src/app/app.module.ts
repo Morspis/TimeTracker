@@ -29,6 +29,8 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction'; // a plugin
 
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
   timeGridPlugin,
@@ -57,13 +59,14 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    NgxChartsModule,
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
     NgbModule,
     FullCalendarModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders, AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

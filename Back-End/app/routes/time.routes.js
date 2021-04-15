@@ -23,7 +23,7 @@ module.exports = app => {
     router.get("/:teamName", times.findAllByProject);
 
     // Retrieve all by date
-    router.get("/:date", times.findAllByDate)
+    router.get("/date/:date", times.findAllByDate)
 
     // Retrieve all published Times
     router.get("/published", times.findAllPublished);
