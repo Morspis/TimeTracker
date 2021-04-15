@@ -40,48 +40,47 @@
       <div class="ninety">
         <div class="fullscreen">
           <div class="fifty">
+            
+            <li class="list-group-item">
+              Name: Tyler Dys
+              <br>
+              Role: Admin
+              <br>
+              </li>
+              
             <li class="list-group-item">
               Name: Ethan Walser
               <br>
               Role: User
               </li>
 
-              <li class="list-group-item">
-                Name: Tyler Dys
-                <br>
-                Role: Admin
-                </li>
+              
 
                 <li class="list-group-item">
                   Name: Suman Gurung
                   <br>
                   Role: User
                   </li>
+                
           </div>
 
           <div class="fifty">
-            <li class="list-group-item" *ngFor="let time of times; let i = index" [class.active]="i == currentIndex">
-              UID: 1 <br>
-              15 Minutes <br>
-              Date: {{ time.date }}
-            </li>
-
-            <li class="list-group-item" *ngFor="let time of times; let i = index" [class.active]="i == currentIndex">
-              UID: 2 <br>
-              {{ time.numMinutes }} Minutes <br>
-              Date: {{ time.date }}
-            </li>
-
-            <li class="list-group-item" *ngFor="let time of times; let i = index" [class.active]="i == currentIndex">
-              UID: 3 <br>
-              60 Minutes <br>
-              Date: {{ time.date }}
-            </li>
-            
+            <li class="list-group-item rightText">
+              Total Time Tracked on Project: <br>
+              1 Hour <br>
+            </li> 
+            <li class="list-group-item rightText">
+              Total Time Tracked on Project: <br>
+              1.6 Hours <br>
+            </li> 
+            <li class="list-group-item rightText">
+              Total Time Tracked on Project: <br>
+              4 Hours <br>
+            </li> 
             
           </div>
-
-   
+          
+          
 
 
         
