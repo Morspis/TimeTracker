@@ -1,1 +1,95 @@
-<p>projects works!</p>
+<div class="form-group" *ngIf="!projectSelected">
+  <!-- Not selected project-->
+  <label for="teamName">Team Name</label>
+  <select class="form-control" id="teamName" required name="teamName">
+    <option value="Testing Team">Testing Team</option>
+  </select>
+  <br>
+  <button class="btn btn-primary" (click)="selectProject()">Submit</button>
+</div>
+
+<div class="container" *ngIf="projectSelected">
+  <!-- Project Selected -->
+  <h1> Project Progress </h1>
+  <h2> Testing Team </h2>
+  <ngx-charts-line-chart
+  [view] = "[1200,400]"
+  [legend]="legend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxis]="xAxis"
+  [yAxis]="yAxis"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [timeline]="timeline"
+  [results]="multi"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)"
+  >
+  </ngx-charts-line-chart>
+  
+
+
+  <div class="fullscreen">
+    <div class="sixty">
+      <div class="ten">
+        <h1>Project Times</h1>
+      </div>
+
+      <div class="ninety">
+        <div class="fullscreen">
+          <div class="fifty">
+            
+            <li class="list-group-item">
+              Name: Tyler Dys
+              <br>
+              Role: Admin
+              <br>
+              </li>
+              
+            <li class="list-group-item">
+              Name: Ethan Walser
+              <br>
+              Role: User
+              </li>
+
+              
+
+                <li class="list-group-item">
+                  Name: Suman Gurung
+                  <br>
+                  Role: User
+                  </li>
+                
+          </div>
+
+          <div class="fifty">
+            <li class="list-group-item rightText">
+              Total Time Tracked on Project: <br>
+              1 Hour <br>
+            </li> 
+            <li class="list-group-item rightText">
+              Total Time Tracked on Project: <br>
+              1.6 Hours <br>
+            </li> 
+            <li class="list-group-item rightText">
+              Total Time Tracked on Project: <br>
+              4 Hours <br>
+            </li> 
+            
+          </div>
+          
+          
+
+
+        
+        <h2>{{ uName1 }}</h2>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

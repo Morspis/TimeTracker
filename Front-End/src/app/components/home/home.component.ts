@@ -1,23 +1,34 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { AddTimeComponent } from '../add-time/add-time.component';
 import { TokenStorageService } from '../../services/token-storage.service';
-import { CalendarOptions } from '@fullcalendar/core';
-
-
-
+import { Calendar, CalendarOptions, DateSelectArg } from '@fullcalendar/core';
+import { TimeService } from '../../services/time.service'
+import { Time } from '../../models/time.model'
+import { CommonModule } from '@angular/common'
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+  
+  
 export class HomeComponent implements OnInit {
   content?: string;
+  times?: Time[];
+  currentTime?: Time;
+  currentIndex = -1;
+  numMinutes = 0;
+  userID?: Number;
+
 
   @ViewChild('myModal') modal!: AddTimeComponent;
-  constructor(private userService: UserService, private tokenStorage: TokenStorageService) { }
+  @ViewChildren('myCalendar') calendar!: Calendar;
+  constructor(private userService: UserService, private tokenStorage: TokenStorageService, private timeService: TimeService) { }
   isLoggedIn = false;
+  selectedDate = '';
+  // events = [{title: "Test", start: "2021-04-06", allDay: true}]
 
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridWeek',
@@ -26,9 +37,9 @@ export class HomeComponent implements OnInit {
       center: 'title',
       right: 'listWeek'
     },
+    // events: this.events,
     selectable: true,
-    select: function(info) {
-    }
+    select: this.setDate.bind(this)
   };
 
   ngOnInit(): void {
@@ -48,6 +59,65 @@ export class HomeComponent implements OnInit {
     }
   }
   addTime() {
-    this.modal.open();
+    //this.modal.time.date = String(arg.startStr)
+    this.modal.open()
+    
+  }
+
+  setDate(arg: DateSelectArg) {
+    this.selectedDate = String(arg.startStr)
+    this.modal.time.date = String(arg.startStr);
+    this.refreshList(this.selectedDate);
+  }
+  
+  retrieveTimes(date: string): void {
+    this.timeService.getAllByDate(date)
+      .subscribe(
+        data => {
+          this.times = data;
+          
+          // let index :any;
+          // let temp: Time[];
+          // for (index in this.times){
+          //   console.log(this.times![index].date);
+          //   console.log(date);
+          //   if (this.times![index].date == date){
+          //     temp!.push(this.times![index]);
+          //   }
+          // }
+          // this.times = temp!;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  refreshList(date: string): void {
+    this.retrieveTimes(date);
+    this.currentTime = undefined;
+    this.currentIndex = -1;
+  }
+
+  setActiveTime(time: Time, index: number): void {
+    this.currentTime = time;
+    this.currentIndex = index;
+  }
+  
+  // redoEvents(){
+  //   this.calendarOptions.events = '';
+  //   this.calendarOptions.events = this.events;
+  // }
+
+
+  
+
+}
+function myFunction() {
+  var x: any = document.getElementById("nav");
+  if (x.className === "header_nav") {
+    x.className += " responsive";
+  } else {
+    x.className = "header_nav";
   }
 }

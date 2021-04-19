@@ -1,18 +1,18 @@
 
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><img class="img-responsive" height="100px" width="100px" src="assets/images/logo.png" alt="SummaTime Logo">SummaTime</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a routerLink="/home" class="nav-link"> Time </a>
+          <a routerLink="/home" class="nav-link" *ngIf="isLoggedIn"> Time </a>
         </li>
         <li class="nav-item">
-          <a routerLink="/projects" class="nav-link"> Projects </a>
+          <a routerLink="/projects" class="nav-link" *ngIf="isLoggedIn"> Projects </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Help</a>
@@ -20,9 +20,7 @@
         <li class="nav-item" *ngIf="showAdminBoard">
           <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
         </li>
-        <li class="nav-item">
-          <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
-        </li>
+        
       </ul>
 
       <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
@@ -38,15 +36,7 @@
         <li class="nav-item">
 
           <a href="/profile" class="nav-link" routerLink="profile"><div class="dropdown">
-            
-            <a class="navbar-brand" href="#"><img class="img-responsive" height="50px" width="50px" src="assets/images/usr.png"
-                alt="SummaTime Logo">{{ username }}</a>
-            <div class="dropdown-content">
-            <a href="/profile" class="nav-link" routerLink="profile"> My Profile</a>
-              <a href="#">My Time Report</a>
-              <a href="#">Notification</a>
-              <a href="#">Sign Out</a>
-            </div>
+            <a class="nav-link" href="/profile">{{ username }}</a>
           </div></a>
          
         </li>
@@ -62,5 +52,20 @@
 
 <div class="container">
   <router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 

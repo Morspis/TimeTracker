@@ -38,8 +38,40 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
     const userID = req.query.userID;
     var condition = userID ? { userID: { [Op.like]: `%${userID}%` } } : null;
+    console.log("Amongus");
+    Time.findAll({ where: condition })
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while retrieving times."
+        });
+      });
+  };
+
+  exports.findAllByProject = (req, res) => {
+    const teamName = req.query.teamName;
+    var condition = teamName ? { teamName: { [Op.like]: `%${teamName}%` } } : null;
   
     Time.findAll({ where: condition })
+      .then(data => {
+        res.send(data);
+      })
+      .catch(err => {
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while retrieving times."
+        });
+      });
+  };
+
+  exports.findAllByDate = (req, res) => {
+    const date = req.params.date;
+    var condition = (date ? { date: { [Op.like]: `%${date}%` } } : null);
+    console.log(date);
+    Time.findAll({ where: {condition} })
       .then(data => {
         res.send(data);
       })

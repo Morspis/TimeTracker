@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ObserveOnSubscriber } from 'rxjs/internal/operators/observeOn';
 
 const baseUrl = 'http://localhost:8080/api/times';
 
@@ -13,6 +14,14 @@ export class TimeService {
 
   getAll(): Observable<any> {
     return this.http.get(baseUrl);
+  }
+
+  getAllByProject(teamName:any): Observable<any> {
+    return this.http.get(`${baseUrl}/${teamName}`);
+  }
+
+  getAllByDate(date: any): Observable<any> {
+    return this.http.get(`${baseUrl}/date/${date}`)
   }
 
   get(id:any): Observable<any> {
@@ -35,7 +44,7 @@ export class TimeService {
     return this.http.delete(baseUrl);
   }
 
-  findByTitle(title:any): Observable<any> {
-    return this.http.get(`${baseUrl}?title=${title}`);
+  findByUID(userID:any): Observable<any> {
+    return this.http.get(`${baseUrl}?userID=${userID}`);
   }
 }

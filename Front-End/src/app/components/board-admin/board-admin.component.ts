@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../../services/user.service';
+import { Time } from 'src/app/models/time.model';
+import { TimeService } from 'src/app/services/time.service';
+import { User } from '../../models/user.model';
+import { UserService } from '../../services/user.service'
 
 @Component({
   selector: 'app-board-admin',
@@ -7,18 +10,53 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./board-admin.component.css']
 })
 export class BoardAdminComponent implements OnInit {
-  content?: string;
+  times?: Time[];
+  currentTime?: Time;
+  currentIndex = -1;
+  numMinutes = 0;
+  teamName = "testingTeam"; //FIXME
+  user?: User;
 
-  constructor(private userService: UserService) { }
+  constructor(private timeService: TimeService, private userService: UserService) { }
 
   ngOnInit(): void {
-    this.userService.getAdminBoard().subscribe(
-      data => {
-        this.content = data;
-      },
-      err => {
-        this.content = JSON.parse(err.error).message;
+    this.retrieveTimes(this.teamName);
+  }
+
+  retrieveTimes(teamName: String): void {
+    this.timeService.getAllByProject(teamName)
+      .subscribe(
+        data => {
+          this.times = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });
+  }
+
+  calcTotalTime(userID: number): number {
+    let index: any;
+    let sum = 0;
+    for (index in this.times) {
+      if (this.times![index].userID == userID) {
+        sum += this.times![index].numMinutes!;
       }
-    );
+    }
+    return sum;
+  }
+
+  getUserName(userID: any): string {
+    
+    this.userService.getUser(userID).subscribe(
+      data => {
+        this.user = data;
+        console.log(data);
+        return this.user;
+      },
+      error => {
+        console.log(error);
+      });
+      return null!;
   }
 }

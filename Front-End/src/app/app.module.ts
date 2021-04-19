@@ -19,8 +19,6 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { MenuComponent } from './menu/menu.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BoardAdminComponent } from './components/board-admin/board-admin.component';
-import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
-import { BoardUserComponent } from './components/board-user/board-user.component'
 
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -30,6 +28,8 @@ import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction'; // a plugin
+
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -52,8 +52,6 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     TimeDetailsComponent,
     RegisterComponent,
     BoardAdminComponent,
-    BoardModeratorComponent,
-    BoardUserComponent,
     MenuComponent,
     
   ],
@@ -61,13 +59,14 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    NgxChartsModule,
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
     NgbModule,
     FullCalendarModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders, AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
