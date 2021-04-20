@@ -1,11 +1,54 @@
-<ul class = "tempClass">All Times Tracked on Project</ul>
-                <li class="list-group-item" *ngFor="let time of times; let i = index" [class.active]="i == currentIndex">
-                  UserID: {{ time.userID }} <br>
-                  {{ time.numMinutes }} Minutes <br>
-                  Date: {{ time.date }}
-                </li>
-                <li class="list-group-item">
-                  UserID: 2 <br>
-                  40 Minutes <br>
-                  Date: 2021-03-26
-                </li> 
+<h2> Users assigned to project </h2>
+<div class="ninety">
+  <div class="fullscreen">
+    <div class="fifty">
+      
+      <li class="list-group-item">
+        Name: Tyler Dys
+        <br>
+        Role: Admin
+        <br>
+      </li>
+
+      <li class="list-group-item">
+        Name: Ethan Walser
+        <br>
+        Role: User
+      </li>
+
+      <li class="list-group-item">
+        Name: Suman Gurung
+        <br>
+        Role: User
+      </li>
+      <br><br>
+      <h2>All Times Tracked on Project</h2>
+      <li class="list-group-item" *ngFor="let time of times; let i = index" [class.active]="i == currentIndex">
+        UserID: {{ time.userID }} <br>
+        {{ time.numMinutes }} Minutes <br>
+        Date: {{ time.date }}
+      </li>
+      <li class="list-group-item">
+        UserID: 2 <br>
+        40 Minutes <br>
+        Date: 2021-03-26
+      </li> 
+    </div>
+    
+    <div class="fifty">
+      <li class="list-group-item rightText">
+
+      </li>
+      <li class="list-group-item rightText">
+        <button class = "btn btn-primary">Manage User</button>
+      </li>
+      <li class="list-group-item rightText">
+        <button class = "btn btn-primary">Manage User</button>
+      </li>
+    
+      
+    </div>
+    
+  </div>
+ 
+</div>
