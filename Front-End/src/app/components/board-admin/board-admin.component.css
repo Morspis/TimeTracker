@@ -43,6 +43,17 @@
   
   .list-group-item{
       height:95px !important;
-  
+    justify-content: right;
   }
+  
+.flex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    margin-top:15px !important;
+    margin-left:60px !important;
+}
   
